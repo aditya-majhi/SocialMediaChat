@@ -116,7 +116,7 @@ export function ConversationList({
               <motion.div
                 key={conversation.id}
                 className={cn(
-                  "hover:bg-neutral-50 dark:hover:bg-gray-700 p-4 border-b border-neutral-200 cursor-pointer transition-colors duration-200",
+                  "hover:bg-neutral-100 p-4 border-b border-neutral-200 cursor-pointer transition-colors duration-200",
                   isActive && "bg-blue-50"
                 )}
                 onClick={() => handleSelectConversation(conversation.id)}

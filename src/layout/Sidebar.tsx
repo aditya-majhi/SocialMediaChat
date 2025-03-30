@@ -29,21 +29,6 @@ export function Sidebar({
   });
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
 
-  const toggleDarkMode = () => {
-    const newMode = !isDarkMode;
-    setIsDarkMode(newMode);
-
-    // Apply dark mode to the entire app
-    if (newMode) {
-      document.documentElement.classList.add("dark-mode");
-    } else {
-      document.documentElement.classList.remove("dark-mode");
-    }
-
-    // Store preference
-    localStorage.setItem("darkMode", newMode ? "true" : "false");
-  };
-
   // Initialize dark mode from local storage on component mount
   React.useEffect(() => {
     // Load dark mode preference
@@ -208,19 +193,6 @@ export function Sidebar({
           <PopoverContent side="right" className="max-w-80" align="start">
             <div className="space-y-4">
               <h3 className="text-lg font-medium">Settings</h3>
-              <div className="flex items-center justify-between">
-                <div className="space-y-0.5">
-                  <Label htmlFor="theme-mode">Dark Mode</Label>
-                  <div className="text-xs text-neutral-500">
-                    Toggle between light and dark theme
-                  </div>
-                </div>
-                <Switch
-                  id="theme-mode"
-                  checked={isDarkMode}
-                  onCheckedChange={toggleDarkMode}
-                />
-              </div>
               <div className="flex items-center justify-between">
                 <div className="space-y-0.5">
                   <Label htmlFor="notifications">Notifications</Label>
