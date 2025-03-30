@@ -230,7 +230,11 @@ export function CommunitiesList({ className }: CommunitiesListProps) {
           translateX: activeCommunityId !== null && isMobile ? "-100%" : "0%",
         }}
         transition={{ type: "spring", damping: 25, stiffness: 300 }}
-        style={{ maxHeight: "100%", overflowY: "auto" }}
+        style={{
+          maxHeight: "100%",
+          overflowY: "auto",
+          width: isMobile || !activeCommunityId ? "100%" : "auto",
+        }}
       >
         <div className="p-4 border-b border-neutral-200">
           <div className="mb-4">
